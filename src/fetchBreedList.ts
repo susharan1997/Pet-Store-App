@@ -1,4 +1,4 @@
-import { QueryFunction, useQuery } from "@tanstack/react-query";
+import { QueryFunction } from "@tanstack/react-query";
 import { breedListAPIResponse, Animal } from "./APIResponseTypes";
 
 const fetchBreedList: QueryFunction<breedListAPIResponse, ["breeds", Animal]> =
@@ -8,7 +8,7 @@ const fetchBreedList: QueryFunction<breedListAPIResponse, ["breeds", Animal]> =
       return [];
     }
     const Result = await fetch(
-      `https://pets-v2.dev-apis.com/breeds?animal=${animal}`,
+      `https://pets-v2.dev-apis.com/breeds?animal=${animal}`
     );
     if (!Result.ok) {
       throw new Error(`No results found for ${animal}`);

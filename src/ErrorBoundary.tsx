@@ -1,13 +1,13 @@
-import React, { Component, ErrorInfo, ReactElement } from "react";
+import { Component, ErrorInfo, ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 class ErrorBoundary extends Component<{ children: ReactElement }> {
   state = {
-    hasError: false
+    hasError: false,
   };
   static getDerivedStateFromError() {
     return {
-      hasError: true
+      hasError: true,
     };
   }
   componentDidCatch(error: Error, info: ErrorInfo) {

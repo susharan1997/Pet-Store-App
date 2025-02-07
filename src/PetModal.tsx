@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, MutableRefObject, ReactElement } from "react";
+import React, { useEffect, useRef, RefObject, ReactElement } from "react";
 import { createPortal } from "react-dom";
 
 const PetModal = ({ children }: { children: ReactElement }) => {
-  const modalRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const modalRef: RefObject<HTMLDivElement | null> = useRef(null);
   if (!modalRef.current) {
     modalRef.current = document.createElement("div");
     console.log(modalRef.current, "CURRENT REF VALUE");

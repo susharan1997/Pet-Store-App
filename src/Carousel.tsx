@@ -1,14 +1,13 @@
 import React, { MouseEvent, useState } from "react";
 
 type CarouselTypes = {
-  images: string[];
+  images?: string[];
 };
 
-const Carousel: React.FC<CarouselTypes> = ({ images }) => {
+const Carousel: React.FC<CarouselTypes> = ({
+  images = ["http://pets-images.dev-apis.com/pets/none.jpg"],
+}) => {
   const [active, setActive] = useState(0);
-  const [carouselImages] = useState(
-    "http://pets-images.dev-apis.com/pets/none.jpg"
-  );
 
   const handleIndexClick = (event: MouseEvent<HTMLElement>) => {
     if (!(event.target instanceof HTMLElement)) return;
@@ -33,10 +32,6 @@ const Carousel: React.FC<CarouselTypes> = ({ images }) => {
       </div>
     </div>
   );
-};
-
-Carousel.defaultProps = {
-  images: ["http://pets-images.dev-apis.com/pets/none.jpg"]
 };
 
 export default Carousel;

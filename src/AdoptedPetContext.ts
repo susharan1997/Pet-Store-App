@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
 import { Pet } from "./APIResponseTypes";
 
 const AdoptedPetContext = createContext<
@@ -12,9 +12,9 @@ const AdoptedPetContext = createContext<
     breed: "Beagle",
     images: [],
     city: "Seattle",
-    state: "WA"
+    state: "WA",
   },
-  () => {}
+  () => {},
 ]);
 
 export default AdoptedPetContext;
