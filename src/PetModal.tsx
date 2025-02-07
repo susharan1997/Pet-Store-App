@@ -5,12 +5,11 @@ const PetModal = ({ children }: { children: ReactElement }) => {
   const modalRef: RefObject<HTMLDivElement | null> = useRef(null);
   if (!modalRef.current) {
     modalRef.current = document.createElement("div");
-    console.log(modalRef.current, "CURRENT REF VALUE");
+    modalRef.current.classList.add("modal");
   }
 
   useEffect(() => {
     const modalRootElement = document.getElementById("modal");
-    console.log(modalRootElement, "ROOT ELEMENT");
     if (!modalRootElement || !modalRef.current) return;
 
     modalRootElement.appendChild(modalRef.current);

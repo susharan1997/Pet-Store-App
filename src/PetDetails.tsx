@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import AdoptedPetContext from "./AdoptedPetContext";
@@ -14,7 +14,6 @@ export const PetDetails = () => {
   }
 
   const [petModal, setPetModal] = useState<boolean>(false);
-  console.log(petModal, "PET MODAL");
   const navigate = useNavigate();
   const Result = useQuery({
     queryKey: ["details", id],
